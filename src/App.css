@@ -1,0 +1,115 @@
+* {
+  box-sizing: border-box;
+  margin: 0%;
+  padding: 0%;
+  
+}
+@keyframes moveBg {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+  body {
+ 
+  background: linear-gradient(270deg, #74ebd5, #4dc3d3);
+  background-size: 400% 400%;
+  animation: moveBg 10s ease infinite;
+}
+
+
+
+.searchBar {
+  display: flex;
+  
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-top: 100px;
+  flex-direction: column;
+ 
+}
+.searchBar input {
+ padding: 30px;
+height: 50px;
+width: 300px;
+  cursor: pointer;
+ 
+  border: none;
+outline: none;
+border-radius: 10px;
+box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+ 
+ 
+}
+
+
+
+.searchBar button {
+  
+margin: 20px;
+ padding: 10px;
+  cursor: pointer;
+
+ 
+  background-color: rgb(48, 201, 48);
+color: white;
+
+border-radius: 10px;
+
+}
+
+ .logo {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.weatherCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 300px;
+  margin: 30px auto;
+  padding: 20px;
+
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(10px);
+
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.weatherLeft h1 {
+  font-size: 40px;
+}
+
+.weatherRight {
+  text-align: right;
+}
+
+.weatherRight h2 {
+  margin-bottom: 5px;
+}
+.searchBar button:hover {
+  background-color: #00b44b;
+}
+
+
+.weatherCard:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+.searchBar button:active {
+  transform: scale(0.95);
+}
+.weatherCard h1 {
+  transition: all 0.3s ease;
+}

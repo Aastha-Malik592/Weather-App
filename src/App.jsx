@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import './App.css'
+import {ThemeContext} from './Context/ThemeContext'
+import { useContext } from 'react'
 
 const App = () => {
   const [city,setCity]=useState('')
@@ -8,6 +10,7 @@ const App = () => {
   const [weather,setWeather]=useState(null)
   const [loading,setLoading]=useState(false)
  const API_KEY="8c30163c8cbd4eeaaa0140040262605"
+ const {darkMode,toggleTheme}=useContext(ThemeContext)
   // console.log(city)
 const today = new Date().toDateString()
   const getweather=async()=>{
@@ -32,13 +35,18 @@ setError("city not found")
   }
 
 return (
-  <div>
+  <div className={darkMode ? "dark" : "light"}>
 
     <div className='logo'>
       <img
         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF7LThne1oiSixSMi-C6LWIa2H4B460mP07g&s"
       />
     </div>
+     <button className='themeButton'
+            onClick={()=>{
+              toggleTheme()
+            }}>{darkMode ? "Dark Mode" : "Light Mode"}</button>
+        
 
     <div className='searchBar'>
 
@@ -84,6 +92,8 @@ return (
           </div>
 
         </div>
+         
+        
 
         <div className='forecastContainer'>
 
@@ -105,6 +115,8 @@ return (
             </div>
 
           ))}
+      
+            
 
         </div>
 
